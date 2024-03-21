@@ -1,3 +1,10 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 function calculateNetSalary(basicSalary, benefits) {
     // Constants for tax rates and deductions
     const PAYE_RATE = 0.3;
@@ -29,7 +36,10 @@ function calculateNetSalary(basicSalary, benefits) {
 }
 
 // Example usage:
-const basicSalary = parseInt(prompt("Enter basic salary:"));
-const benefits = parseInt(prompt("Enter benefits:"));
-const salaryDetails = calculateNetSalary(basicSalary, benefits);
-console.log("Salary Details:", salaryDetails);
+rl.question("Enter basic salary: ", (basicSalary) => {
+  rl.question("Enter benefits: ", (benefits) => {
+    const salaryDetails = calculateNetSalary(parseInt(basicSalary), parseInt(benefits));
+    console.log("Salary Details:", salaryDetails);
+    rl.close();
+  });
+});

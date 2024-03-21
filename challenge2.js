@@ -1,3 +1,10 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 function calculateDemeritPoints(speed) {
     const speedLimit = 70;
     const kmPerPoint = 5;
@@ -14,6 +21,8 @@ function calculateDemeritPoints(speed) {
 }
 
 // Example usage:
-const speed = parseInt(prompt("Enter car speed (in km/h):"));
-const result = calculateDemeritPoints(speed);
-console.log(result);
+rl.question("Enter car speed (in km/h): ", (speed) => {
+  const result = calculateDemeritPoints(parseInt(speed));
+  console.log(result);
+  rl.close();
+});

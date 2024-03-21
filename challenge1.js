@@ -1,3 +1,5 @@
+const readline = require('readline');
+
 function calculateGrade(marks) {
     if (marks > 79) {
         return "A";
@@ -12,7 +14,14 @@ function calculateGrade(marks) {
     }
 }
 
-// Example usage:
-const marks = parseInt(prompt("Enter student marks:"));
-const grade = calculateGrade(marks);
-console.log("Grade:", grade);
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('Enter student marks: ', (input) => {
+  const marks = parseInt(input);
+  const grade = calculateGrade(marks);
+  console.log("Grade:", grade);
+  rl.close();
+});
