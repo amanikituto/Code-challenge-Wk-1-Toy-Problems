@@ -26,7 +26,7 @@ Write a program that takes as input the speed of a car e.g 80. If the speed is l
 
 ### How to Use
 1. Open the file `challenge2.js`.
-2. Run the script in a VS Code.
+2. Run the script in JavaScript environment.
 3. Input the car speed when prompted.
 4. The program will output the demerit points.
 
@@ -37,7 +37,7 @@ Write a program whose major task is to calculate an individual’s Net Salary by
 
 ### How to Use
 1. Open the file `challenge3.js`.
-2. Run the script in VS Code.
+2. Run the script in JavaScript environment.
 3. Input the basic salary and benefits when prompted.
 4. The program will output the salary details.
 
